@@ -26,8 +26,8 @@ import org.bson.BsonDocument;
 import org.bson.BsonInt32;
 import org.bson.BsonString;
 
-import javax.security.sasl.SaslClient;
-import javax.security.sasl.SaslException;
+import gnusasl.javax.security.sasl.SaslClient;
+import gnusasl.javax.security.sasl.SaslException;
 
 import static com.mongodb.connection.CommandHelper.executeCommand;
 import static com.mongodb.connection.CommandHelper.executeCommandAsync;

@@ -38,7 +38,7 @@ jar {
                     'javax.management.*',
                     'javax.net.*',
                     'javax.net.ssl.*',
-                    'javax.security.sasl.*',
+                    'gnusasl.javax.security.sasl.*',
                     'javax.security.auth.callback.*',
                     'org.ietf.jgss.*',
                     'io.netty.*;resolution:=optional',
@@ -51,6 +51,9 @@ jar {
         exclude("META-INF")
     }
     from(zipTree(getJar(":bson"))) {
+        exclude("META-INF")
+    }
+    from(zipTree(project(":driver-core").projectDir.path + "/libs/android-sasl.jar")) {
         exclude("META-INF")
     }
 }.dependsOn("init")

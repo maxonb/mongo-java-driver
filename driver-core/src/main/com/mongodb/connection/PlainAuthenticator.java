@@ -22,12 +22,12 @@ import com.mongodb.ServerAddress;
 
 import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.callback.NameCallback;
+import gnusasl.javax.security.auth.callback.NameCallback;
 import javax.security.auth.callback.PasswordCallback;
 import javax.security.auth.callback.UnsupportedCallbackException;
-import javax.security.sasl.Sasl;
-import javax.security.sasl.SaslClient;
-import javax.security.sasl.SaslException;
+import gnusasl.javax.security.sasl.Sasl;
+import gnusasl.javax.security.sasl.SaslClient;
+import gnusasl.javax.security.sasl.SaslException;
 import java.io.IOException;
 
 import static com.mongodb.AuthenticationMechanism.PLAIN;

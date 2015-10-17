@@ -26,9 +26,9 @@ import org.ietf.jgss.GSSManager;
 import org.ietf.jgss.GSSName;
 import org.ietf.jgss.Oid;
 
-import javax.security.sasl.Sasl;
-import javax.security.sasl.SaslClient;
-import javax.security.sasl.SaslException;
+import gnusasl.javax.security.sasl.Sasl;
+import gnusasl.javax.security.sasl.SaslClient;
+import gnusasl.javax.security.sasl.SaslException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.HashMap;
@@ -62,7 +62,7 @@ class GSSAPIAuthenticator extends SaslAuthenticator {
         MongoCredential credential = getCredential();
         try {
             Map<String, Object> props = new HashMap<String, Object>();
-            props.put(Sasl.CREDENTIALS, getGSSCredential(credential.getUserName()));
+            props.put("javax.security.sasl.credentials", getGSSCredential(credential.getUserName()));
 
             SaslClient saslClient = Sasl.createSaslClient(new String[]{GSSAPI.getMechanismName()}, credential.getUserName(),
                                                           credential.getMechanismProperty(SERVICE_NAME_KEY, SERVICE_NAME_DEFAULT_VALUE),

@@ -28,6 +28,7 @@ clirr {
 
 dependencies {
     compile project(':bson')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 
     compile "io.netty:netty-buffer:$nettyVersion", optional
     compile "io.netty:netty-transport:$nettyVersion", optional
@@ -45,7 +46,7 @@ jar {
                     'javax.management.*',
                     'javax.net.*',
                     'javax.net.ssl.*',
-                    'javax.security.sasl.*',
+                    'gnusasl.javax.security.sasl.*',
                     'javax.security.auth.callback.*',
                     'org.ietf.jgss.*',
                     'io.netty.*;resolution:=optional',
